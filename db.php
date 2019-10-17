@@ -30,9 +30,26 @@
 		// Using the PDO:
 		$PDO = new PDO('mysql:host=localhost;dbname=glorious', 'root', '');
 	}else{
-		$baseURL = "/Glorious_destiny"; // offline $baseURL = "/Glorious_destiny"; // online $baseURL = "http://intense-savannah-81233.herokuapp.com";
+		$baseURL = "/"; // offline $baseURL = "/Glorious_destiny"; // online $baseURL = "http://intense-savannah-81233.herokuapp.com";
 		// Using the PDO:
-		$PDO = new PDO('mysql:host=localhost;dbname=glorious', 'root', '');
+		$PDO = new PDO('mysql:host=localhost;dbname=_database', 'root', '');
+
+
+		// /**************************************
+		// * Create databases and                *
+		// * open connections                    *
+		// **************************************/
+		// // Create (connect to) SQLite database in file
+		// $PDO = new PDO('sqlite:database.sqlite3');
+		// // Set errormode to exceptions
+		// $PDO->setAttribute(PDO::ATTR_ERRMODE, 
+		// 						PDO::ERRMODE_EXCEPTION);
+
+		// // Create new database in memory
+		// $memory_db = new PDO('sqlite::memory:');
+		// // Set errormode to exceptions
+		// $memory_db->setAttribute(PDO::ATTR_ERRMODE, 
+		// 						PDO::ERRMODE_EXCEPTION);
 	}
 	$BD->setDB($PDO);
 ?>
